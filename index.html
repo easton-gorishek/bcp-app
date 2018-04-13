@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        #result {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid none;
+        }
+    </style>
 </head>
 <body>
     <h1>On a <em>new</em> branch</h1>
@@ -15,16 +23,25 @@
     <input id="input-number" type="number">
     <button onclick="getSquare()">Get Square</button>
 
+    <div id="result"></div>
+
     <script>
         function getSquare() {
             var input = document.getElementById("input-number");
             var power = document.querySelector("input[name=power]:checked");
-            console.log(power.value);
             //console.log(input.value);
-            var exponent = power.value
             var x = input.value;
+            var exponent = power.value
             //var square = x * x;
             var answer = Math.pow(x, exponent)
+
+            var result = document.getElementById("result");
+
+            result.innerHTML = x + ' to the ' + exponent + ' is ' + '<strong>' +  answer + '</strong>';
+
+            result.style.color = "white";
+            result.style.background = "maroon"
+
             console.log(x, 'to the', exponent, 'is', answer);
        }
         
